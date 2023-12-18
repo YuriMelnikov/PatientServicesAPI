@@ -1,10 +1,6 @@
 from fastapi import FastAPI
-from pymongo import MongoClient
+from app.routers import service_routers
 
 app = FastAPI()
-client = MongoClient("mongodb://localhost:27017/")
-db = client["mydatabase"]
 
-@app.get("/")
-def read_root():
-    return {"message": "Hello, FastAPI and MongoDB!"}
+app.include_router(service_routers.router)
