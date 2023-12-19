@@ -38,7 +38,7 @@ async def read_services():
             {
                 "_id": str(service["_id"]),
                 "name": service.get("name", ""),
-                "price": int(service.get("price", 0)),
+                "price": str(service.get("price", "")),
                 "doctor": service.get("doctor", ""),
                 "room_number": service.get("room_number", ""),
                 "description": service.get("description", "")
